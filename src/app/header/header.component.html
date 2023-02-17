@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span>My App</span>
+
+  <span class="example-spacer"></span>
+  <div><span class="headers">Login</span></div>
+  <div [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <span class="headers">User</span>
+  </div>
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item routerLink="/memories">
+      <mat-icon class="material-icons">person</mat-icon>
+      <span>Profile</span>
+    </a>
+    <a mat-menu-item routerLink="/memories">
+      <mat-icon class="material-icons">done</mat-icon>
+      <span>Orders</span>
+    </a>
+    <a mat-menu-item routerLink="/memories">
+      <mat-icon class="material-icons">logout</mat-icon>
+      <span>Logout</span>
+    </a>
+  </mat-menu>
+  <div class="headers">
+    <i class="fa" style="font-size: 21px">&#xf07a;</i>
+    <span class="badge badge-warning" id="lblCartCount"> 5 </span>
+  </div>
+</mat-toolbar>
