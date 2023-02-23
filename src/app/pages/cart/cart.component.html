@@ -1,0 +1,13 @@
+<div class="mainCart">
+  <div class="cartHeader">
+    <h1>My Cart</h1>
+  </div>
+  <div class="cartItems">
+    <app-cart-items
+      class="item"
+      *ngFor="let item of cart | keyvalue; let i = index"
+      [item]="item.value"
+    >
+    </app-cart-items>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.mainCart {
+  margin: 20px;
+}
+.cartItems {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  flex: 0 0 60%;
+}

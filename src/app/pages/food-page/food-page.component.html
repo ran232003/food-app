@@ -1,0 +1,47 @@
+<div class="mainFoodPage">
+  <div class="imageFood">
+    <img [src]="food.imageUrl" alt="Photo of a Shiba Inu" />
+  </div>
+  <div class="detailsFood">
+    <div class="header">
+      <h2>
+        {{ food.name }}
+      </h2>
+      <ngb-rating
+        class="starColors"
+        [(rate)]="selected"
+        (hover)="hovered = $event"
+        (leave)="hovered = 0"
+        [readonly]="readonly"
+      ></ngb-rating>
+      <div class="orginFlex">
+        <div
+          class="originContainer"
+          *ngFor="let origin of food.origins; let i = index"
+        >
+          <p class="orgins">&nbsp;{{ origin }} &nbsp;</p>
+        </div>
+      </div>
+      <div class="orginFlex">
+        <div class="tag" *ngFor="let item of food.tags; let i = index">
+          <b>{{ item }} &nbsp;</b>
+        </div>
+      </div>
+      <div class="timeDiv">
+        <p class="time">
+          <mat-icon>access_time</mat-icon>
+          <span class="time-text">{{ food.cookTime }}</span>
+        </p>
+      </div>
+      <div class="price">
+        <h4>Price: ${{ food.price }}</h4>
+      </div>
+      <button (click)="addToCart()" mat-raised-button class="bt" color="accent">
+        Add To Cart
+      </button>
+    </div>
+    <div class="like">
+      <mat-icon [style.color]="'red'">favorite</mat-icon>
+    </div>
+  </div>
+</div>

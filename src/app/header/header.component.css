@@ -7,6 +7,10 @@
   padding: 10px;
   border-radius: 50%;
 }
+a {
+  text-decoration: none; /* no underline */
+  color: white;
+}
 .headers:hover {
   transition: all 0.6s ease;
   background-color: yellow;

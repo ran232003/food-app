@@ -1,0 +1,59 @@
+.example-card {
+  max-width: 400px;
+}
+.example-card:hover {
+  transition: all 0.6s ease;
+  background-color: rgb(210, 172, 246);
+}
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+.cardContent {
+  margin: 3px;
+}
+.section {
+  display: flex;
+  justify-content: space-between;
+}
+.orgins {
+  display: flex;
+  text-align: center;
+  height: fit-content;
+  flex-direction: column;
+}
+.originContainer {
+  background-color: #eae6e6;
+  margin-left: 5px;
+  border-radius: 10px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.sectionFlex {
+  display: flex;
+}
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.time-text {
+}
+.starColors {
+  color: red;
+  font-size: 20px;
+}
+a {
+  color: blueviolet;
+  text-decoration: none; /* no underline */
+}
+a:visited {
+  color: inherit;
+}
+a:hover {
+  background-color: aqua;
+}
+.titleColor {
+  color: blueviolet;
+}

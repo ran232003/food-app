@@ -1,0 +1,10 @@
+.visually-hidden.test.ng-star-inserted {
+  visibility: hidden;
+}
+.test {
+  visibility: hidden;
+}
+.visually-hidden {
+  visibility: hidden;
+  display: none;
+}

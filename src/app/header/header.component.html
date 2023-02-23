@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <span>My App</span>
+  <a routerLink="/" class="headers"><span>My App</span></a>
 
   <span class="example-spacer"></span>
   <div><span class="headers">Login</span></div>
@@ -20,8 +20,8 @@
       <span>Logout</span>
     </a>
   </mat-menu>
-  <div class="headers">
+  <a routerLink="/cart" class="headers">
     <i class="fa" style="font-size: 21px">&#xf07a;</i>
     <span class="badge badge-warning" id="lblCartCount"> 5 </span>
-  </div>
+  </a>
 </mat-toolbar>

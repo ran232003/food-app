@@ -1,0 +1,16 @@
+.tagsContainer {
+  display: flex;
+  margin: auto;
+  width: 50%;
+
+  padding: 10px;
+}
+.tag {
+  background-color: rgb(219, 216, 216);
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20%;
+  color: rgb(61, 61, 228);
+  cursor: pointer;
+}

@@ -1,0 +1,63 @@
+.mainFoodPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.imageFood {
+  /* border: solid green 5px; */
+  margin-right: 30px;
+}
+img {
+  height: 50vh;
+  border-radius: 30%;
+}
+.detailsFood {
+  /* border: solid green 5px; */
+  display: flex;
+}
+.like {
+}
+.starColors {
+  color: red;
+  font-size: 20px;
+}
+.header {
+}
+.originContainer {
+  background-color: #eae6e6;
+  margin-left: 5px;
+  border-radius: 10px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.orginFlex {
+  display: flex;
+  margin-top: 10px;
+}
+.tag {
+  background-color: rgb(219, 216, 216);
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20%;
+  color: rgb(61, 61, 228);
+  cursor: pointer;
+}
+.timeDiv {
+  display: flex;
+  margin-top: 10px;
+}
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bt {
+  border-radius: 20%;
+}
+.bt:hover {
+  background-color: #673ab7;
+}

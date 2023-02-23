@@ -1,0 +1,10 @@
+<div class="tagsContainer">
+  <div
+    (click)="handleFilter(item)"
+    class="tag"
+    *ngFor="let item of tags | keyvalue"
+  >
+    <b>{{ item.key }}</b
+    ><b>({{ item.value }})</b>&nbsp;
+  </div>
+</div>

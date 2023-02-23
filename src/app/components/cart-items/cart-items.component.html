@@ -1,0 +1,23 @@
+<div class="mainCartItem">
+  <div>
+    <img [src]="item.imageUrl" alt="Photo of a Shiba Inu" />
+  </div>
+  <div class="title">
+    <h3>{{ item.name }}</h3>
+  </div>
+  <div class="count">
+    <div class="centerInput">
+      <p (click)="changeCount('+')">+</p>
+      <input disabled [(ngModel)]="count" />
+      <p (click)="changeCount('-')">-</p>
+    </div>
+  </div>
+  <div class="totalPrice">
+    <h3>$ {{ item.totalPrice }}</h3>
+  </div>
+  <div>
+    <button (click)="removeFromCart()" mat-stroked-button style="color: brown">
+      Remove
+    </button>
+  </div>
+</div>

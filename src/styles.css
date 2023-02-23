@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 html,
 body {
   height: 100%;
@@ -8,9 +7,13 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-mat-icon:hover {
+/* mat-icon:hover {
   color: aqua;
 }
 .mat-icon-button:hover .mat-button-focus-overlay {
   color: aqua !important;
+} */
+.visually-hidden {
+  visibility: hidden;
+  position: absolute;
 }

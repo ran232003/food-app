@@ -1,0 +1,38 @@
+<a [routerLink]="['/food', food.name, food.id]">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title class="titleColor">{{ food.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="food.imageUrl" alt="Photo of a Shiba Inu" />
+    <mat-card-content class="cardContent">
+      <ngb-rating
+        class="starColors"
+        [(rate)]="selected"
+        (hover)="hovered = $event"
+        (leave)="hovered = 0"
+        [readonly]="readonly"
+      ></ngb-rating>
+      <div class="section">
+        <div class="sectionFlex">
+          <div
+            class="originContainer"
+            *ngFor="let origin of food.origins; let i = index"
+          >
+            <p class="orgins">&nbsp;{{ origin }} &nbsp;</p>
+          </div>
+        </div>
+        <p class="time">
+          <mat-icon>access_time</mat-icon>
+          <span class="time-text">{{ food.cookTime }}</span>
+        </p>
+      </div>
+      <div>
+        <h4>${{ food.price }}</h4>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</a>
