@@ -3,11 +3,23 @@
     <h1>My Cart</h1>
   </div>
   <div class="cartItems">
-    <app-cart-items
-      class="item"
-      *ngFor="let item of cart | keyvalue; let i = index"
-      [item]="item.value"
-    >
-    </app-cart-items>
+    <div class="item">
+      <app-cart-items
+        class="item"
+        *ngFor="let item of cart | keyvalue; let i = index"
+        [item]="item.value"
+      >
+      </app-cart-items>
+    </div>
+
+    <div class="checkOut">
+      <div class="cartInfo">
+        <h3>Count: {{ totalCart.count }}</h3>
+        <h3>Price: {{ totalCart.totalAmount }}</h3>
+      </div>
+      <button mat-raised-button color="accent" class="cartButton">
+        Proceed to Cheackout
+      </button>
+    </div>
   </div>
 </div>

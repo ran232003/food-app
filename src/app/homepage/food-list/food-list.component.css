@@ -6,3 +6,7 @@
 .item {
   margin: 15px;
 }
+.noInfo {
+  display: flex;
+  justify-content: center;
+}

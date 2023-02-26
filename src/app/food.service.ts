@@ -4,13 +4,22 @@ import { sample_foods } from './shared/data';
 import { Food } from './shared/Food';
 @Injectable({ providedIn: 'root' })
 export class FoodService {
-  foods: Food[] = sample_foods;
-  currentTags = this.setTags();
+  // foods: Food[] = sample_foods;
+  foods: Food[] = [];
+  currentTags!: any;
+  currentTagsChange = new Subject<{}>();
   foodChange = new Subject<Food[]>();
   FilterResult = new Subject<Food[]>();
   constructor() {}
   getFood() {
     return this.foodChange;
+  }
+  setFoods(apiFoods: Food[]) {
+    console.log(apiFoods);
+    this.foods = apiFoods;
+    this.foodChange.next(apiFoods);
+    this.currentTags = this.setTags();
+    this.currentTagsChange.next(this.currentTags);
   }
   setFilterResult(filteredOptions: Food[]) {
     this.foodChange.next(filteredOptions);

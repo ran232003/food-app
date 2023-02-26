@@ -11,6 +11,9 @@ export class TagsComponent implements OnInit {
   constructor(private foodService: FoodService) {}
   ngOnInit(): void {
     this.tags = this.foodService.currentTags;
+    this.foodService.currentTagsChange.subscribe((tags) => {
+      this.tags = tags;
+    });
   }
   handleFilter(item: any) {
     console.log(item);

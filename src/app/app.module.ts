@@ -28,6 +28,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CartComponent } from './pages/cart/cart.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,9 +44,11 @@ import { CartItemsComponent } from './components/cart-items/cart-items.component
     FoodPageComponent,
     CartComponent,
     CartItemsComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MatMenuModule,
     MatSnackBarModule,
     MatIconModule,

@@ -37,7 +37,7 @@ export class CartItemsComponent implements OnInit, OnChanges {
     } else {
       this.count = this.count - 1;
     }
-    this.cartService.changeCount(this.count, this.item);
+    this.cartService.changeCount(this.count, this.item, checkCount);
   }
   removeFromCart() {
     this.cartService.removeFromCart(this.item.id);

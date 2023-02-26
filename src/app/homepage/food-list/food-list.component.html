@@ -1,5 +1,7 @@
 <div>
-  <div *ngIf="condition; else elseBlock"><mat-spinner></mat-spinner></div>
+  <div class="noInfo" *ngIf="condition; else elseBlock">
+    <mat-spinner></mat-spinner>
+  </div>
   <ng-template #elseBlock>
     <div class="foodList">
       <app-food-item

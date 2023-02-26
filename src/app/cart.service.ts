@@ -40,15 +40,27 @@ export class CartService {
     this.cartChange.next(this.cart);
     console.log('this.cart', this.cart);
   }
-  changeCount(count: any, item: any) {
+  changeCount(count: any, item: any, sign: string) {
     let id = item.id;
     this.cart[id as keyof typeof this.cart].count = count;
     this.cart[id as keyof typeof this.cart].totalPrice =
       count * this.cart[id as keyof typeof this.cart].price;
+    if (sign === '+') {
+      this.checkOut.count = this.checkOut.count + 1;
+      this.checkOut.totalAmount +=
+        this.cart[id as keyof typeof this.cart].price;
+    } else {
+      this.checkOut.count = this.checkOut.count - 1;
+      this.checkOut.totalAmount -=
+        this.cart[id as keyof typeof this.cart].price;
+    }
     this.cartChange.next(this.cart);
+    this.checkOutChange.next(this.checkOut);
   }
   removeFromCart(id: any) {
     console.log(this.cart[id], 'in delete');
+    this.checkOut.count -= this.cart[id].count;
+    this.checkOut.totalAmount -= this.cart[id].totalPrice;
     delete this.cart[id];
     console.log(this.cart[id], 'in delete');
     this.cartChange.next(this.cart);

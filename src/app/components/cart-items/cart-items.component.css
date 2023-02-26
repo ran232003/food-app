@@ -4,7 +4,7 @@
 }
 .mainCartItem {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   border: rgb(193, 190, 190) solid 3px;
   padding: 5px;
@@ -56,4 +56,10 @@ button:hover {
 .centerInput {
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 600px) {
+  img {
+    height: 5vh;
+    border-radius: 30%;
+  }
 }

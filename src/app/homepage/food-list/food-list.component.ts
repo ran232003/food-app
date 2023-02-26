@@ -12,11 +12,19 @@ export class FoodListComponent implements OnInit {
   condition = true;
   constructor(private foodService: FoodService) {}
   ngOnInit(): void {
+    console.log('here');
     this.foods = this.foodService.foods;
     this.foodService.foodChange.subscribe((foods) => {
       this.foods = foods;
-      this.condition = false;
+
+      if (this.foods.length > 0) {
+        this.condition = false;
+      }
+      console.log('here2', this.condition);
     });
-    this.condition = false;
+    if (this.foods.length > 0) {
+      this.condition = false;
+    }
+    console.log('here', this.condition);
   }
 }

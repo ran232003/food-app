@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'food/:foodName/:foodId', component: FoodPageComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'memories', component: PageNotFoundComponent },
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/404', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -6,5 +6,27 @@
   flex-wrap: wrap;
 }
 .item {
-  flex: 0 0 60%;
+  flex: 0 0 80%;
+}
+.checkOut {
+  flex: 0 0 15%;
+  margin-left: 10px;
+  border: rgb(193, 190, 190) solid 2px;
+  display: flex;
+  height: 20vh;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.cartButton {
+  width: 90%;
+  height: fit-content;
+}
+.cartInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
 }

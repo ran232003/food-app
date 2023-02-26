@@ -17,9 +17,7 @@ export class FoodItemComponent implements OnInit {
   hovered = 0;
   readonly = false;
   ngOnInit(): void {
-    console.log(this.food);
     this.currentRate = this.food.stars;
     this.selected = this.food.stars;
-    console.log(this.currentRate);
   }
 }
