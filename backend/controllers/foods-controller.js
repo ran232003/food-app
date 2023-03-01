@@ -27,14 +27,8 @@ const setFoods = async (req, res, next) => {
 const getFoods = async (req, res, next) => {
   try {
     let foodArray = await Food.find();
-    //console.log(foodArray);
 
     let newArr = foodArray.map((food, index) => {
-      // delete food["__v"];
-      // let id = food["_id"];
-      // food["id"] = id.toString();
-      // delete food["_id"];
-      // console.log(food);
       return food.transform();
     });
 

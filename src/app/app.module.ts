@@ -30,6 +30,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './pages/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     CartItemsComponent,
     NotFoundComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
