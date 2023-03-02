@@ -23,7 +23,7 @@ export class GuardService implements CanActivate {
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
     console.log('g');
-    if (this.userService.user) {
+    if (this.userService.user.email) {
       return true;
     } else {
       console.log('in else, no access');

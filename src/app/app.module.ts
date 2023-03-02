@@ -31,6 +31,7 @@ import { CartItemsComponent } from './components/cart-items/cart-items.component
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './pages/auth/auth.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AuthComponent } from './pages/auth/auth.component';
     CartItemsComponent,
     NotFoundComponent,
     AuthComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

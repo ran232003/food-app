@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const NewError = require("../models/error-schema");
 const app = express();
-
+const nodemailer = require("nodemailer");
 app.use(bodyParser.json());
 
 const signup = async (req, res, next) => {
@@ -84,7 +84,7 @@ const login = async (req, res, next) => {
         fullName: checkUser.fullName,
         id: checkUser.id,
         token,
-      };
+      }; //
       return res.json({ message: "Login Success", user: returnUser });
     } else {
       let err = new NewError("User Dont Exist");
@@ -100,7 +100,35 @@ const login = async (req, res, next) => {
     message: "Somthing Went Wrong, Try Again",
   });
 };
+const sendMail = async (req, res, next) => {
+  let { email } = req.body;
+  console.log(email);
+  // Generate test SMTP service account from ethereal.email
+  // Only needed if you don't have a real mail account for testing
+  let testAccount = await nodemailer.createTestAccount();
+
+  // create reusable transporter object using the default SMTP transport
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "mike232003@gmail.com",
+      pass: "qlgzaytopwblyjyl",
+    },
+  });
+  //google pass: qlgzaytopwblyjyl
+  // send mail with defined transport object
+  let user = getDbUser();
+  let info = await transporter.sendMail({
+    from: "mike232003@gmail.com", // sender address
+    to: email, // list of receivers
+    subject: "Hello ✔", // Subject line
+    text: "Hello world?", // plain text body
+    html: "<b>Hello world?</b>", // html body
+  });
+  return res.json({ message: "Login Success" });
+};
 module.exports = {
   signup: signup,
   login: login,
+  sendMail: sendMail,
 };

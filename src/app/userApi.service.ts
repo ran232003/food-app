@@ -17,6 +17,12 @@ export class UserApiService {
       user
     );
   }
+  sendEmail(payload: {}) {
+    return this.http.post<User>(
+      `http://localhost:5000/api/auth/sendMail`,
+      payload
+    );
+  }
   setUserLocalStorage(user: User) {
     console.log(user);
     localStorage.setItem('user', JSON.stringify(user));
@@ -32,5 +38,13 @@ export class UserApiService {
     }
     this.userUpdate.next(this.user);
     return user;
+  }
+  logoutUser() {
+    console.log('st');
+    localStorage.removeItem('user');
+    this.user = new User(null);
+    console.log('this.user', this.user);
+    this.userUpdate.next(this.user);
+    console.log('end');
   }
 }

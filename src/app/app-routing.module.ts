@@ -7,13 +7,19 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthComponent } from './pages/auth/auth.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { FoodPageComponent } from './pages/food-page/food-page.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: HomepageComponent, canActivate: [GuardService] },
-  { path: 'food/:foodName/:foodId', component: FoodPageComponent },
-  { path: 'cart', component: CartComponent },
+  {
+    path: 'food/:foodName/:foodId',
+    component: FoodPageComponent,
+    canActivate: [GuardService],
+  },
+  { path: 'cart', component: CartComponent, canActivate: [GuardService] },
   { path: 'auth/:status', component: AuthComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/404', pathMatch: 'full' },
 ];

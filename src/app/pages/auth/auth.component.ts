@@ -64,4 +64,7 @@ export class AuthComponent implements OnInit {
       });
     });
   }
+  sendEmail() {
+    this.userApiService.sendEmail('mike232003@gmail.com');
+  }
 }
